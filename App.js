@@ -7,7 +7,7 @@ const AppNavigator = createStackNavigator(
     {
         CityList: CityList,
         Detail: WeatherDetailScreen,
-        title: "hi",
+
     },
     {
         initialRouteName: 'CityList',

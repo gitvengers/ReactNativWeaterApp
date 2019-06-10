@@ -8,7 +8,7 @@ export default class CityList extends React.Component {
         return {
             title: `2조 날씨앱`,
             headerStyle: {
-                backgroundColor: 'cornflowerblue',
+                backgroundColor: '#393E42',
             },
             headerTitleStyle: {
                 color: '#fff',
@@ -36,7 +36,7 @@ export default class CityList extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://192.168.0.161:8080/weather-crawler/available-cities')
+        fetch('http://192.168.100.138:8080/weather-crawler/available-cities')
             .then(response => response.json())
             .then(cities => {
                 console.log('cities =', cities.length);
@@ -70,7 +70,7 @@ export default class CityList extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <SearchBar placeholder="Search..."
+                <SearchBar containerStyle={{borderBottomColor: '#303338', borderTopColor: '#303338'}} placeholder="Search..."
                            onChangeText={this.updateSearch}
                            value={this.state.search}/>
                 <FlatList
@@ -86,7 +86,7 @@ export default class CityList extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#393E42',
 
     },
 
@@ -98,13 +98,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
 
         borderWidth: 1,
-        borderColor: 'cornflowerblue',
+        borderColor: '#303338',
     },
     text: {
-
         flexWrap: 'wrap',
         alignSelf: 'center',
         fontSize: 20,
+        color: '#fff'
     },
     leftAlign: {
         flexWrap: 'wrap',
@@ -114,5 +114,6 @@ const styles = StyleSheet.create({
         paddingLeft: 35,
         paddingRight: 35,
         fontSize: 30,
+        color: '#fff'
     }
 });
