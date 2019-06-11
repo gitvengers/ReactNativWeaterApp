@@ -31,7 +31,7 @@ export default class WeatherDetailScreen extends React.Component {
         const city = navigation.getParam('city', null);
         // const city = 'Daejeon';
 
-        fetch(`http://192.168.100.138:8080/weather-crawler/current-weathers/by-city-name/${city}`)
+        fetch(`http://192.168.100.118:8080/weather-crawler/current-weathers/by-city-name/${city}`) // change to ur IP
             .then(response => response.json())
             .then(info => {
                 this.setState({

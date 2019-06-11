@@ -31,12 +31,12 @@ export default class CityList extends React.Component {
         if (search == "") {
             this.state.cityList = this.state.cities;
         } else {
-            this.state.cityList = this.state.cities.filter(item  => item.search(search) == 0 );
+            this.state.cityList = this.state.cities.filter(item  => item.toLowerCase().search(search.toLowerCase()) >= 0 );
         }
     };
 
     componentDidMount() {
-        fetch('http://192.168.100.138:8080/weather-crawler/available-cities')
+        fetch('http://192.168.100.118:8080/weather-crawler/available-cities') // change to ur IP
             .then(response => response.json())
             .then(cities => {
                 console.log('cities =', cities.length);
